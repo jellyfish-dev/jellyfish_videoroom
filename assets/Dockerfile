@@ -1,6 +1,8 @@
 # ==== CONFIGURE =====
 # Use alpine as base image, node alpine image is causing issues with build on mac
-FROM alpine:3.18 as builder
+FROM node:20-alpine3.19 as builder
+RUN corepack enable
+
 WORKDIR '/app'
 
 ARG FE_BE_HOST
@@ -11,10 +13,10 @@ ENV VITE_FISHJAM_ROOM_VERSION=$FISHJAM_ROOM_VERSION
 ENV VITE_FISHJAM_VERSION=$FISHJAM_VERSION
 
 # Install nodejs and npm
-RUN apk add --no-cache nodejs npm
+RUN apk add --no-cache git openssh-client
 
 # Create a non-root user
-RUN adduser --disabled-password --gecos "" node
+# RUN adduser --disabled-password --gecos "" node
 
 # Own the app directory
 RUN chown node:node ./
@@ -24,16 +26,17 @@ RUN chown node:node ./
 USER node
 
 COPY package*.json ./
+COPY .yarnrc.yml ./
 
 # ==== BUILD =====
 # Install dependencies
-RUN npm ci
+RUN yarn
 
 # Copy application files
 COPY . .
 
 # Build the app
-RUN npm run build
+RUN yarn build
 
 # ==== SERVE =====
 
