@@ -1,6 +1,5 @@
 # ==== CONFIGURE =====
-# Use alpine as base image, node alpine image is causing issues with build on mac
-FROM node:20-alpine3.19 as builder
+FROM node:20-alpine3.20 as builder
 RUN corepack enable
 
 WORKDIR '/app'
@@ -13,10 +12,7 @@ ENV VITE_FISHJAM_ROOM_VERSION=$FISHJAM_ROOM_VERSION
 ENV VITE_FISHJAM_VERSION=$FISHJAM_VERSION
 
 # Install nodejs and npm
-RUN apk add --no-cache git openssh-client
-
-# Create a non-root user
-# RUN adduser --disabled-password --gecos "" node
+RUN apk add --no-cache git
 
 # Own the app directory
 RUN chown node:node ./
