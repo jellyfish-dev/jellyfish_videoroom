@@ -609,6 +609,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fishjam-dev/react-client@https://github.com/fishjam-cloud/web-client-sdk.git#workspace=@fishjam-dev/react-client&head=workspace-yarn":
+  version: 0.4.0
+  resolution: "@fishjam-dev/react-client@https://github.com/fishjam-cloud/web-client-sdk.git#workspace=%40fishjam-dev%2Freact-client&commit=982e240c11d2cc8a2b1df7f0664270b4860748f2"
+  dependencies:
+    "@fishjam-dev/ts-client": "npm:0.5.0"
+    events: "npm:3.3.0"
+    lodash.isequal: "npm:4.5.0"
+  checksum: 10c0/4ec04c9caa52458c20ca76aa163525e73c0a36f363d4a86f0fd5170206d03296388b2ba0d1c79c492fb1c6ef4608156c136e67f58d30dcdd8210b1edcea17b3e
+  languageName: node
+  linkType: hard
+
+"@fishjam-dev/ts-client@https://github.com/fishjam-cloud/web-client-sdk.git#workspace=@fishjam-dev/ts-client&head=workspace-yarn":
+  version: 0.5.0
+  resolution: "@fishjam-dev/ts-client@https://github.com/fishjam-cloud/web-client-sdk.git#workspace=%40fishjam-dev%2Fts-client&commit=982e240c11d2cc8a2b1df7f0664270b4860748f2"
+  dependencies:
+    events: "npm:^3.3.0"
+    protobufjs: "npm:^7.3.0"
+    typed-emitter: "npm:^2.1.0"
+    uuid: "npm:^9.0.1"
+  checksum: 10c0/c6008badec8baa4a1c68d1a22b164b765129716459f1207e901aa85abaae2ff210d6fcd4497a79ef541dc3003c46d25e6324c54aeebf143a54828401dbca0549
+  languageName: node
+  linkType: hard
+
 "@floating-ui/core@npm:^1.6.0":
   version: 1.6.4
   resolution: "@floating-ui/core@npm:1.6.4"
@@ -2092,6 +2115,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"events@npm:3.3.0, events@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "events@npm:3.3.0"
+  checksum: 10c0/d6b6f2adbccbcda74ddbab52ed07db727ef52e31a61ed26db9feb7dc62af7fc8e060defa65e5f8af9449b86b52cc1a1f6a79f2eafcf4e62add2b7a1fa4a432f6
+  languageName: node
+  linkType: hard
+
 "exenv@npm:^1.2.0":
   version: 1.2.2
   resolution: "exenv@npm:1.2.2"
@@ -2195,6 +2225,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fishjam-videoroom@workspace:."
   dependencies:
+    "@fishjam-dev/react-client": "https://github.com/fishjam-cloud/web-client-sdk.git#workspace=@fishjam-dev/react-client&head=workspace-yarn"
     "@mediapipe/tasks-vision": "npm:^0.10.12"
     "@types/ramda": "npm:^0.29.11"
     "@types/react": "npm:^18.2.67"
@@ -2835,7 +2866,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.isequal@npm:^4.5.0":
+"lodash.isequal@npm:4.5.0, lodash.isequal@npm:^4.5.0":
   version: 4.5.0
   resolution: "lodash.isequal@npm:4.5.0"
   checksum: 10c0/dfdb2356db19631a4b445d5f37868a095e2402292d59539a987f134a8778c62a2810c2452d11ae9e6dcac71fc9de40a6fedcb20e2952a15b431ad8b29e50e28f
@@ -3451,7 +3482,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"protobufjs@npm:^7.2.4":
+"protobufjs@npm:^7.2.4, protobufjs@npm:^7.3.0":
   version: 7.3.2
   resolution: "protobufjs@npm:7.3.2"
   dependencies:
